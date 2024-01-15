@@ -1,0 +1,224 @@
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>版权信息与资源使用说明 - Benjamin&#39;s Podcast</title>
+<link rel="shortcut icon" href="https://yyl125.top/podcast/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@latest/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://yyl125.top/podcast/media/css/tailwind.css">
+<link rel="stylesheet" href="https://yyl125.top/podcast/styles/main.css">
+<link rel="stylesheet" href="https://yyl125.top/podcast/media/css/APlayer.min.css">
+<script src="https://yyl125.top/podcast/media/scripts/script.js"></script>
+
+
+<script defer>
+  (function (document) {
+    const SOURCE = 'https://cdn.jsdelivr.net';
+    const DEST = 'https://gcore.jsdelivr.net';
+    const $ = document.querySelectorAll.bind(document);
+    const checkAvailable = (callback) => {
+      let timeoutId;
+      const newNode = document.createElement('link');
+      newNode.rel = 'stylesheet';
+      newNode.text = 'text/css';
+      const onError = () => {
+        if (!timeoutId) {
+          return;
+        }
+  
+        clearTimeout(timeoutId);
+        timeoutId = 0;
+        newNode.href = 'about:blank';
+        newNode.remove();
+        callback(false);
+      };
+  
+      timeoutId = setTimeout(onError, 2000);
+      newNode.addEventListener('error', onError);
+      newNode.addEventListener('load', function () {
+        newNode.remove();
+        clearTimeout(timeoutId);
+        callback(true);
+      });
+  
+      newNode.href =
+        SOURCE +
+        '/gh/PipecraftNet/jsdelivr-auto-fallback@main/empty.css?' +
+        Date.now();
+      document.head.insertAdjacentElement('afterbegin', newNode);
+    };
+  
+    const replaceElementSrc = () => {
+      for (const element of $('link[rel="stylesheet"]')) {
+        if (element.href && element.href.includes(SOURCE)) {
+          element.href = element.href.replace(SOURCE, DEST);
+        }
+      }
+  
+      for (const element of $('script')) {
+        if (element.src && element.src.includes(SOURCE)) {
+          const newNode = document.createElement('script');
+          newNode.src = element.src.replace(SOURCE, DEST);
+          element.defer = true;
+          element.src = '';
+          element.before(newNode);
+          element.remove();
+        }
+      }
+  
+      for (const element of $('img')) {
+        if (element.src && element.src.includes(SOURCE)) {
+          const source = element.src;
+          // Used to cancel loading. Without this line it will remain pending status.
+          element.src = '';
+          element.src = source.replace(SOURCE, DEST);
+        }
+      }
+    };
+  
+    checkAvailable(function (isAvailable) {
+      if (isAvailable) {
+        return;
+      }
+  
+      console.warn(SOURCE + ' is not available.');
+  
+      replaceElementSrc();
+      // Replace dynamically added elements
+      setInterval(replaceElementSrc, 500);
+    });
+  })(document);
+</script>
+  <script src="https://yyl125.top/podcast/media/scripts/prism.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 dark:text-gray-200 font-medium md:font-normal leading-none">
+    <a href="https://yyl125.top/podcast">Benjamin&#39;s Podcast</a>
+  </h1>
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900 dark:text-gray-200"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="dark:text-gray-200" stroke="#1A202C"></path></svg>
+    </button>
+  </div>
+</div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 dark:text-gray-200 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
+      <a href="https://yyl125.top/podcast" class="nav-link">Home</a>
+      <a href="https://yyl125.top/podcast/archives" class="nav-link">Archive</a>
+      <a href="https://yyl125.top/podcast/tags" class="nav-link">Tags</a>
+      <a href="https://yyl125.top/podcast/about" class="nav-link">About</a>
+    </div>
+    <div class="lg:flex">
+      <a href="https://yyl125.top/" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center" target="_blank">
+        <div>Blog</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+      <a href="https://yyl125.top/navigation/" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center" target="_blank">
+        <div>Navigation</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+      <a href="https://yyl125.top/podcast/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3 mt-6">
+          <h1 class="text-4xl dark:text-gray-200">版权信息与资源使用说明</h1>
+          <div class="mt-6 lg:mt-10 post-content">
+            <p>首先，作为原创作者非常感谢你对「Benjamin's Podcast」内容的认可。你的支持即是对我最大的鼓励！</p>
+            <h2 id="版权信息">版权信息</h2>
+            <p>Benjamin 支持原创作品，尊重原创作者的劳动成果，帮助维护原创作者的知识产权。创作与生产过程中使用正规来源的资源，尽可能使用经授权的资源。对于无版权内容及未经授权的引用会使用明显的标记进行声明</p>
+            <h3 id="原创作品">原创作品</h3>
+            <p>Benjamin 对网站内的所有原创图片、文字以及音像资源等内容保留最终解释权。「原创作品」指包括但不限于被标有「Benjamin」、「by Benjamin」、「By Benjamin」、「Benjamin Studio」、「由 Benjamin 原创发布」、「Benjamin Original Content」、「Benjamin Produce」、「Benjamin Present」、「Shot by Benjamin」等 Logo、字样、字幕或其它任何形式的版权相关声明内容的最终作品</p>
+            <p>除另有特别说明的网站内容外，「Benjamin's Podcast」的所有网站内容均基于 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享许可协议 署名 - 非商业使用 - 相同方式共享 4.0</a>（CC BY-NC-SA 4.0）共享。这意味着只要你遵守以下许可协议条款内容，Benjamin 就无法收回这些权利：
+              <ol>
+                <li><strong>共享</strong>：在任何媒介以任何形式复制、发行网站内容</li>
+                <li><strong>演绎</strong>：修改、转换或以网站内容为基础进行创作</li>
+              </ol>
+            </p>
+            <p>除了上述的许可协议条款内容外，还必须遵守下列条件：
+              <ol>
+                <li><strong>署名</strong>：必须给出适当的署名<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，提供指向本许可协议的链接，同时标明是否（对原始作品）作了修改<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。你可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为你或你的使用背书</li>
+                <li><strong>非商业性使用</strong>：不得将网站内容用于商业目的<sup class="footnote-ref"><a href="#fn3" id="fnref1">[3]</a></sup></li>
+                <li><strong>相同方式共享</strong>：如果剪切网站内容内容或者基于网站内容进行创作，必须基于与原先许可协议相同或兼容的许可协议分发新的作品</li>
+                <li><strong>没有附加协议</strong>：不得使用法律术语或者技术措施限制其它人做许可协议允许的事情</li>
+              </ol>
+            </p>
+            <p>除此以外，还需要注意：
+              <ol>
+                <li>不必因为公共领域的作品要素而遵守许可协议，或者使用被可适用的例外或限制<sup class="footnote-ref"><a href="#fn4" id="fnref1">[4]</a></sup>所允许</li>
+                <li>不提供担保。许可协议可能不会给意图使用的所必须的所有许可。例如，形象权、隐私权或人格权等其它权利可能限制如何使用作品<sup class="footnote-ref"><a href="#fn5" id="fnref1">[5]</a></sup></li>
+              </ol>
+            </p>
+            <p>如发现任何个人、实体等违规使用「Benjamin's Podcast」网站中的任何原创作品、无版权内容及未经授权的引用等相关内容或对与之相关的各项权利有疑问，请 <a href="mailto:yylyingyunlong@hotmail.com?subject=Benjamin's%20Podcast%20%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88" target="_blank" rel="noreferrer noopener">邮件</a> 联系 Benjamin，查实后会联系相关内容作者下线相关内容并可能给予信息提供者一定的奖励</p>
+            <h3 id="无版权内容及未经授权的引用">无版权内容及未经授权的引用</h3>
+            <p>对于「Benjamin's Podcast」网站内容中的无版权内容及未经授权的引用会使用明显的标记进行声明，也希望所有引用者尊重原作者相关权利</p>
+            <p>如对「Benjamin's Podcast」网站中的任何原创作品、无版权内容及未经授权的引用等相关内容或对与之相关的各项权利有疑问，请 <a href="mailto:yylyingyunlong@hotmail.com?subject=Benjamin's%20Podcast%20%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88" target="_blank" rel="noreferrer noopener">邮件</a> 联系 Benjamin，查实后会积极修改或下线相关内容并可能给予信息提供者一定的奖励</p>
+            <h2 id="资源使用说明">资源使用说明</h2>
+            <p>Benjamin 通过正规途径获取资源，并按照版权所有者的要求支付非免费资源的使用费。Benjamin 对使用的所有非 Benjamin 原创的图片、文字（含字体）、音像资源负责</p>
+            <h3 id="图片素材使用来源">图片素材使用来源</h3>
+            <ol>
+              <li><a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
+              <li><a href="https://www.wikipedia.org/" target="_blank">wikipedia</a></li>
+              <li><a href="https://www.apple.com/" target="_blank">Apple</a> 官网及其附属网站</li>
+              <li><a href="https://www.microsoft.com/" target="_blank">Microsoft</a> 官网及其附属网站</li>
+              <li><a href="https://worldvectorlogo.com/zh" target="_blank">WorldVectorLogo</a></li>
+            </ol>
+            <h3 id="文字（含字体）素材使用来源">文字（含字体）素材使用来源</h3>
+            <ol>
+              <li><a href="https://www.foundertype.com/" target="_blank">方正字库</a></li>
+              <li><a href="https://www.hanyi.com.cn/" target="_blank">汉仪字库</a></li>
+            </ol>
+            <h3 id="音视频素材使用来源">音视频素材使用来源</h3>
+            <ol>
+              <li><a href="https://www.musicbed.com/" target="_blank">MusicBed</a></li>
+              <li><a href="https://www.motionelements.com/zh-hant/" target="_blank">MotionElements</a></li>
+            </ol>
+            <hr class="footnotes-sep">
+            <section class="footnotes">
+              <ol class="footnotes-list">
+                <li id="fn1" class="footnote-item"><p>必须提供创作者或署名者的姓名或名称、版权标识、许可协议标识、免责标识和作品链接 <a href="#fnref1" class="footnote-backref">↩︎</a></p></li>
+                <li id="fn2" class="footnote-item"><p>必须明确说明你是否修改了作品。或者请保留此前修改版本中的相关说明<a href="#fnref2" class="footnote-backref">↩︎</a></p></li>
+                <li id="fn3" class="footnote-item"><p>商业性使用是指主要目的为获得商业优势或金钱回报 <a href="#fnref3" class="footnote-backref">↩︎</a></p></li>
+                <li id="fn4" class="footnote-item"><p>根据法律的例外和限制性规则，使用者拥有的权利，例如合理使用和公平交易，不受 CC 许可协议的影响 <a href="#fnref4" class="footnote-backref">↩︎</a></p></li>
+                <li id="fn5" class="footnote-item"><p>在按照需要使用文章前，可能需要得到更多许可 <a href="#fnref5" class="footnote-backref">↩︎</a></p></li>
+              </ol>
+            </section>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3">
+          <div class="mt-6 md:pl-8">
+            <h4 class="text-base font-thin text-gray-700 dark:text-gray-200 mb-2">Contact</h4>
+            <div class="text-lg mb-6">
+              <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZAAMcubclUMDVDMjE0UUNRNDZaSFAyTE1GUVJZNkVISS4u" target="_blank">话题征集</a>｜<a href="mailto:yylyingyunlong@hotmail.com">Email</a>
+            </div>
+            <h4 class="text-base font-thin text-gray-700 dark:text-gray-200 mb-2">Subscribe</h4>
+            <div class="text-lg mb-6">
+              <a href="http://yyl125.top/podcast/atom.xml" target="_blank">RSS</a>｜<a href="https://www.xiaoyuzhoufm.com/podcast/619c6905a0cb5077e841f58e" target="_blank">小宇宙（试播）</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 dark:text-gray-200 text-sm sm:text-base lg:text-lg">
+  共 0 期节目，涉及 0 个话题<br>© 2024 Benjamin. All rights reserved.
+</div>
+    </div>
+  </div>
+  <script>
+    Prism.highlightAll()
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://yyl125.top/podcast</id>
+    <title>Benjamin&apos;s Podcast</title>
+    <updated>2024-01-15T16:00:44.782Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://yyl125.top/podcast"/>
+    <link rel="self" href="https://yyl125.top/podcast/atom.xml"/>
+    <subtitle>忠实记录</subtitle>
+    <logo>https://yyl125.top/podcast/images/avatar.png</logo>
+    <icon>https://yyl125.top/podcast/favicon.ico</icon>
+    <rights>All rights reserved 2024, Benjamin&apos;s Podcast</rights>
+</feed>
