@@ -1,0 +1,352 @@
+code[class*=language-],
+pre[class*=language-] {
+  color: #c5c8c6;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Inconsolata,Monaco,Consolas,Courier New,Courier,monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+pre[class*=language-] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
+  background: #1d1f21;
+}
+:not(pre) > code[class*=language-] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+}
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+  color: #7c7c7c;
+}
+.token.punctuation {
+  color: #c5c8c6;
+}
+.namespace {
+  opacity: 0.7;
+}
+.token.keyword,
+.token.property,
+.token.tag {
+  color: #96cbfe;
+}
+.token.class-name {
+  color: #ffffb6;
+}
+.token.boolean,
+.token.constant {
+  color: #9c9;
+}
+.token.deleted,
+.token.symbol {
+  color: #f92672;
+}
+.token.number {
+  color: #ff73fd;
+}
+.token.attr-name,
+.token.builtin,
+.token.char,
+.token.inserted,
+.token.selector,
+.token.string {
+  color: #a8ff60;
+}
+.token.variable {
+  color: #c6c5fe;
+}
+.token.operator {
+  color: #ededed;
+}
+.token.entity {
+  color: #ffffb6;
+}
+.token.url {
+  color: #96cbfe;
+}
+.language-css .token.string,
+.style .token.string {
+  color: #87c38a;
+}
+.token.atrule,
+.token.attr-value {
+  color: #f9ee98;
+}
+.token.function {
+  color: #dad085;
+}
+.token.regex {
+  color: #e9c062;
+}
+.token.important {
+  color: #fd971f;
+}
+.token.bold,
+.token.important {
+  font-weight: 700;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+body {
+  color: #333;
+  background-color: #faf9f7;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #333;
+    color: #999;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .markdown > hr {
+    border-color: #666;
+  }
+  .markdown > p strong,
+  .markdown > ul strong {
+    color: #EAEAEA;
+  }
+}
+.markdown > ol li :not(pre) code,
+.markdown > ol li > code,
+.markdown > p code,
+.markdown > ul li :not(pre) code,
+.markdown > ul li > code,
+p.markdown code.markdown {
+  background-color: #FAFAFA;
+  border-radius: 0.125rem;
+  font-size: 0.875rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: #805ad5;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  vertical-align: baseline;
+  font-weight: 400;
+}
+@media (prefers-color-scheme: dark) {
+  .markdown > ol li :not(pre) code,
+  .markdown > ol li > code,
+  .markdown > p code,
+  .markdown > ul li :not(pre) code,
+  .markdown > ul li > code,
+  p.markdown code.markdown {
+    background-color: #333;
+    color: #b794f4;
+  }
+}
+.markdown > ol li strong code,
+.markdown > p strong code,
+.markdown > ul li strong code {
+  font-weight: 600;
+}
+.markdown > pre,
+pre.markdown {
+  font-weight: 400;
+  scrollbar-width: none;
+}
+.markdown > pre::-webkit-scrollbar,
+pre.markdown::-webkit-scrollbar {
+  display: none;
+}
+.markdown > blockquote,
+blockquote.markdown {
+  color: #7b341e;
+  font-size: 0.875rem;
+  background-color: #fffaf0;
+  padding: 1rem 2rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+@media (prefers-color-scheme: dark) {
+  .markdown > blockquote,
+  blockquote.markdown {
+    background-color: #b7791f;
+    color: #faf089;
+  }
+  .markdown > :not(pre):not(h1):not(h2):not(h3):not(h4) > code,
+  .markdown > ol code,
+  .markdown > ul code {
+    background-color: #FAFAFA;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  .markdown pre {
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+  }
+  .markdown > table td {
+    padding: 0.5rem;
+    border-color: #EAEAEA;
+    font-size: 0.875rem;
+  }
+  .markdown > table td code {
+    background-color: #FAFAFA;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    font-size: 0.75rem;
+    color: #6b46c1;
+  }
+  .markdown figure {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: #FAFAFA;
+    outline: 0;
+    flex-direction: column;
+  }
+  .markdown .task-list-item-checkbox:after {
+    content: "";
+    -webkit-transform: rotate(-45deg) scale(0);
+    transform: rotate(-45deg) scale(0);
+    width: 9px;
+    height: 5px;
+    border: 1px solid #fff;
+    border-top: none;
+    border-right: none;
+    position: absolute;
+    display: inline-block;
+    top: 5px;
+    left: 5px;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+  .markdown .markdownIt-TOC {
+    background-color: #ebf4ff;
+    padding: 2rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  .markdown > ol > li::before {
+    background-color: #5a67d8;
+    color: #EAEAEA;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  .markdown > :not(pre):not(h1):not(h2):not(h3):not(h4) > code,
+  .markdown > ol code,
+  .markdown > ul code {
+    background-color: #333;
+    color: #b794f4;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  .markdown > table th {
+    background-color: #333;
+    color: #999;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  .markdown > table td {
+    border-color: #333;
+  }
+  .markdown > table td code {
+    background-color: #333;
+    color: #b794f4;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  .markdown figure {
+    background-color: #666;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  .markdown .task-list-item-checkbox:checked + .task-list-item-label {
+    background-color: #666;
+    color: #999;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  .markdown .task-list-item-checkbox:before {
+    border-color: #666;
+    background-color: #888;
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  .markdown .markdownIt-TOC {
+    background-color: #111;
+  }
+  .markdown > h1,
+  .markdown > h2,
+  .markdown > h3,
+  .markdown > h4,
+  h1.markdown,
+  h2.markdown,
+  h3.markdown,
+  h4.markdown {
+    color: #EAEAEA;
+  }
+  .dark\:bg-gray-500 {
+    background-color: #666;
+  }
+  .dark\:bg-gray-600 {
+    background-color: #444;
+  }
+  .dark\:bg-gray-700 {
+    background-color: #333;
+  }
+  .dark\:bg-gray-800 {
+    background-color: #111;
+  }
+  .dark\:bg-yellow-50 {
+    background-color: #ffd602;
+  }
+  .dark\:bg-indigo-500 {
+    background-color: #667eea;
+  }
+  .dark\:hover\:bg-black:hover {
+    background-color: #000;
+  }
+  .dark\:hover\:bg-gray-600:hover {
+    background-color: #444;
+  }
+  .dark\:border-gray-400 {
+    border-color: #888;
+  }
+  .dark\:border-gray-600 {
+    border-color: #444;
+  }
+  .dark\:border-gray-700 {
+    border-color: #333;
+  }
+  .dark\:hover\:border-gray-200:hover {
+    border-color: #EAEAEA;
+  }
+  .dark\:text-gray-200 {
+    color: #EAEAEA;
+  }
+  .dark\:text-gray-300 {
+    color: #999;
+  }
+  .dark\:text-gray-700 {
+    color: #333;
+  }
+  .dark\:hover\:text-white:hover {
+    color: #fff;
+  }
+}
